@@ -73,7 +73,7 @@ docker kill containerID/containerName
 
 ####Attach to running container i.e cont01
 docker attach cont01
-docker exec -it cont01 bash
+docker exec -it cont01 bash (exit command after you are inside container will not close running container like what we see during docker run case.)
 
 
 
