@@ -1,0 +1,23 @@
+##############DOCKER INSTALLATION UBUNTU/DEBIAN####################
+apt-get update
+apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+apt-get install -y docker-cedocker-ce-cli containerd.io
+apt-get install docker.io
+docker info
+docker version
+
+##############DOCKER INSTALLATION REDHAT/CENTOS ####################
+##############DOCKER INSTALLATION ####################
+yum install -y yum-utils device-mapper-persistent-data lvm2
+yum-config-manager  --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+
+Optional: Enable the nightly or test repositories.
+yum-config-manager --enable docker-ce-nightly
+yum-config-manager --enable docker-ce-test
+yum install docker-ce docker-ce-cli containerd.io
+systemctl enable docker
+systemctl start docker
+List and sort the versions available in your repo
+yum list docker-ce --showduplicates | sort -r
