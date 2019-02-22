@@ -26,6 +26,9 @@ docker run centos –it bash
 docker container ls
 docker ps
 
+#####Inspect docker container i.e cont01
+docker inspect cont01
+
 #####List all container whether it's stopped or running. 
 docker container ls -a
 docker ps -a
