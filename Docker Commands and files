@@ -34,7 +34,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 47de20deacb9        test:01             "/bin/sh -c /root/st…"   33 minutes ago      Up 14 minutes       0.0.0.0:80->80/tcp, 443/tcp   cont01
 
 
-####List top command of any container i.e centos
+####List top command of any container i.e cont01
 docker top containerID/container name
 Example:
 root@docker-master:~# docker container ls
@@ -49,7 +49,28 @@ root                11393               11369               0                   
 www-data            11394               11392               0                   17:34               ?                   00:00:00            nginx: worker process
 www-data            11395               11392               0                   17:34               ?                   00:00:00            nginx: worker process
 
+####Stop and Start any container i.e centos
+docker stop containerID/containerName
+docker start containerID/containerName
 
+####Pause and unpause any container i.e centos
+docker pause containerID/containerName
+docker unpause containerID/containerName
+
+####Show CPU, Memory, Netowrk, Disk I/O stat
+docker stats containerID/containerName
+Example:
+
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+47de20deacb9        cont01              0.00%               5.406MiB / 7.789GiB   0.07%               1.21kB / 1.72kB     860kB / 4.1kB       6
+
+####Remove or kill any container i.e cont01
+docker rm containerID/containerName
+docker kill containerID/containerName
+
+####Attach to running container i.e cont01
+docker attach cont01
+docker exec -it cont01 bash
 
 
 
