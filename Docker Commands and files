@@ -1,10 +1,56 @@
 ###########DOCKER COMMANDS###############
 docker version
+
+#####List all available docker images
 docker images
-docker pull ubuntu
-docker pull mysql:5.5    
+
+#####Remove any docker images i.e ubuntu
+docker rmi ubuntu
+
+#####List history of any images i.e ubuntu, test:01
+docker history ubuntu
+docker history test:01
+
+#####Inspect docker image i.e ubuntu
 docker inspect ubuntu
+
+####Download/pull ubuntu latest, centos latest and mysql 5.5 version images
+docker pull ubuntu
+docker pull mysql:5.5
+docker pull centos
+
+###RUN centos images as container in interactive bash shell
+docker run centos –it bash
+
+#####List running container 
 docker container ls
+docker ps
+
+#####List all container whether it's stopped or running. 
 docker container ls -a
+docker ps -a
+root@docker-master:~# docker container ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                         NAMES
+47de20deacb9        test:01             "/bin/sh -c /root/st…"   33 minutes ago      Up 14 minutes       0.0.0.0:80->80/tcp, 443/tcp   cont01
+
+
+####List top command of any container i.e centos
+docker top containerID/container name
+Example:
+root@docker-master:~# docker container ls
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                         NAMES
+47de20deacb9        test:01             "/bin/sh -c /root/st…"   34 minutes ago      Up 15 minutes       0.0.0.0:80->80/tcp, 443/tcp   cont01
+root@docker-master:~# docker top cont01
+UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+root                11331               11301               0                   17:34               ?                   00:00:00            /bin/sh -c /root/start.sh
+root                11369               11331               0                   17:34               ?                   00:00:00            /bin/bash /root/start.sh
+root                11392               11331               0                   17:34               ?                   00:00:00            nginx: master process /usr/sbin/nginx
+root                11393               11369               0                   17:34               ?                   00:00:00            /usr/bin/tail -f /dev/null
+www-data            11394               11392               0                   17:34               ?                   00:00:00            nginx: worker process
+www-data            11395               11392               0                   17:34               ?                   00:00:00            nginx: worker process
+
+
+
+
 
 
