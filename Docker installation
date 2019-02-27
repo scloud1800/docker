@@ -20,3 +20,13 @@ systemctl enable docker
 systemctl start docker
 List and sort the versions available in your repo
 yum list docker-ce --showduplicates | sort -r
+
+
+###########DOCKER COMPOSER INSTALLATION#################
+RHEL7:
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+yum -y install docker-composer
+
+UBUNTU:
+apt-get update
+apt-get -y install docker-compose
