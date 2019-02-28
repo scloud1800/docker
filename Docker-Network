@@ -1,0 +1,9 @@
+docker network ls
+docker network rm networkname
+docker swarm init
+docker service ls
+docker node ls
+
+docker network create --driver bridge Network01
+docker run --name cont01 --network Network01 -it -d nginx
+docker run --name cont02 --network Network01 -it -d nginx
